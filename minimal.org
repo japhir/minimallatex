@@ -1,0 +1,81 @@
+# page setup
+#+LaTeX_CLASS: article
+#+LaTeX_CLASS_OPTIONS: [a4paper] 
+#+LaTeX_CLASS_OPTIONS: [12pt] 
+#+LaTeX_CLASS_OPTIONS: [twoside] 
+
+# fonts
+# +LaTeX_HEADER: \usepackage{newtxtext,newtxmath,amstext}
+# +LaTeX_HEADER: \usepackage[mathlf]{MinionPro}
+# +LaTeX_HEADER: \usepackage[scaled=.875]{inconsolata}
+
+# double spacing (usually required for journal submission)
+#+LaTeX_HEADER: \usepackage{setspace}
+#+LaTeX_HEADER: \doublespacing
+
+# placement of TOC anywhere
+#+LaTeX_HEADER: \usepackage{titletoc}
+
+# mathtools
+#+LaTeX_HEADER: \usepackage{mathtools}
+
+# set margins
+#+LaTeX_HEADER: \usepackage[innermargin=1.5in,outermargin=1.25in,vmargin=1.25in]{geometry}
+
+# citation style
+# #+LaTeX_HEADER: \usepackage[authordate,bibencoding=utf8,strict,doi=false,isbn=false,url=false,natbib]{biblatex-chicago}
+#+LaTeX_HEADER: \usepackage[authordate,bibencoding=utf8,strict,backend=biber,doi=false,isbn=false,url=false]{biblatex-chicago}
+# #+LaTeX_HEADER: \usepackage[authordate,strict,backend=bibtex,bibencoding=inputenc]{biblatex-chicago}
+# #+LaTeX_HEADER: \usepackage[authordate]{biblatex-chicago}
+# #+LaTeX_HEADER: \usepackage[authordate,bibencoding=utf8,strict,backend=biblatex,doi=false,isbn=false,url=false,natbib]{biblatex-chicago}
+# (internal) links
+# +LaTeX_HEADER: \hypersetup{colorlinks=true,citecolor=blue,linkcolor=blue,citebordercolor={0 1 0},linktocpage,pdfstartview=FitH,anchorcolor=blue,filecolor=blue,menucolor=blue,urlcolor=blue}
+#+LaTeX_HEADER: \hypersetup{colorlinks=true,citecolor=black,linkcolor=black,citebordercolor={0 1 0},linktocpage,pdfstartview=FitH,anchorcolor=black,filecolor=black,menucolor=black,urlcolor=black}
+
+#+TITLE: Cat Title
+# +SUBTITLE: if I need one it'll be placed here
+#+AUTHOR: It's me
+#+EMAIL: my@email.me
+#+DATE: August 2016
+# add keywords if needed
+# +KEYWORDS: astronomical forcing loscar 
+# LaTeX export settings
+#+LaTeX_HEADER: \addbibresource{/home/japhir/minimal_tex/minimal.bib}
+# #+LaTeX_HEADER: \addbibresource{report.bib}
+#+OPTIONS: H:5 num:2 toc:nil \n:nil |:t ^:f f:t tex:t tasks:nil email:true
+# some aliases so it's easier to read in plaintext
+#+LaTeX_HEADER: \newcommand{\dtC}{\ce{\delta^{13}C}}
+#+LaTeX_HEADER: \newcommand{\deO}{\ce{\delta^{18}O}}
+# emacs org-mode todo integration settings
+#+CATEGORY: Report
+#+FILETAGS: Work
+# emacs startup settings
+#+STARTUP: overview
+# hit C-c C-x C-l for latexpreview
+
+#+BEGIN_abstract
+This is the abstract.
+#+END_abstract
+
+#+TOC: headlines 2
+
+* Introduction
+
+See Figure [[fig:cat]]
+* Material and Methods
+
+This has a reference using =cite= \cite{Cats2016}. Also a =textcite= \textcite{Cats2016} and a =parencite= \parencite{Cats2016}.
+#+NAME: fig:cat
+#+ATTR_LaTeX: :width \textwidth
+#+CAPTION: Cat!
+[[file:cats.jpg]]
+
+* Results
+
+* Discussion
+
+* Acknowledgements
+
+* References
+
+\printbibliography
